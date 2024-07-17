@@ -1,0 +1,17 @@
+use('platzi_store')
+
+// // Agregar un solo valor
+// db.inventory.updateOne({_id:4},{ 
+//     $push:{
+//         tags:"headphone"
+//     }
+// })
+
+// Agregar varios valores
+db.inventory.updateOne({_id:4},{ 
+    $push:{
+        tags:{
+            $each: ['headphone','wireless']
+        }
+    }
+})

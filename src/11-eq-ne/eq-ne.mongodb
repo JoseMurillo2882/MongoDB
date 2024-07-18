@@ -1,0 +1,17 @@
+use("platzi_store")
+
+// Using $eq
+
+//db.inventory.find({qty:20})
+
+//Consulta en un documento general
+//db.inventory.find({qty: {$eq:20}})
+
+//Consulta en sub-documento
+//db.inventory.find({"item.name":"ab"})
+
+
+//USING $ne
+db.inventory.find({ qty: { $ne:20 } })
+
+

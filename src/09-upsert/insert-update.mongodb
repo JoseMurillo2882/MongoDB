@@ -1,0 +1,35 @@
+use ("platzi_store")
+
+db.iot.find({
+    sensor: "A001",
+    date: "2022-01-03",
+}).count()
+
+
+db.iot.insertOne({
+    sensor: "A001",
+    date: "2022-01-03",
+    readings: [1212]
+
+})
+
+// //ELIMINAR DATO EN UN UBICACION
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03",
+//   }, {
+//     $pop: {
+//       readings: 1
+//     }
+//   })
+
+
+//AGREGAR DATO EN FORMA DE ARRAY
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-03",
+  }, {
+    $push: {
+      readings: 2323
+    }
+  })

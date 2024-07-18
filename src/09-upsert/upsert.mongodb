@@ -1,0 +1,13 @@
+use ("platzi_store")
+
+//AGREGAR DATO EN FORMA DE ARRAY
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-03",
+  }, {
+    $push: {
+      readings: 4321
+    }
+  },{
+    upsert:true
+  })
